@@ -14,13 +14,11 @@ const sora = Sora({
 const geist = Geist({
   subsets: ["latin"],
   variable: "--font-geist",
-  display: "swap",
 });
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
   variable: "--font-jetbrains",
-  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -30,7 +28,7 @@ export const metadata: Metadata = {
   keywords: ["KI", "Softwareentwicklung", "AI", "Konventiv", "Digital Transformation"],
 };
 
-const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_ID || "G-KONVENTIV2026";
+const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_ID || "G-QZE54Z95BV";
 
 export default function RootLayout({
   children,
