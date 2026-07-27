@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import { Sora, Geist, JetBrains_Mono } from "next/font/google";
+import { GoogleAnalytics } from "@next/third-parties/google";
+import { SpeedInsights } from "@/components/SpeedInsights";
+import { CookieBanner } from "@/components/CookieBanner";
 import "./globals.css";
 
 const sora = Sora({
@@ -27,6 +30,8 @@ export const metadata: Metadata = {
   keywords: ["KI", "Softwareentwicklung", "AI", "Konventiv", "Digital Transformation"],
 };
 
+const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_ID || "G-KONVENTIV2026";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -38,7 +43,10 @@ export default function RootLayout({
         className={`${sora.variable} ${geist.variable} ${jetbrainsMono.variable} antialiased bg-background text-on-surface`}
       >
         {children}
+        <SpeedInsights />
+        <CookieBanner />
       </body>
+      {GA_MEASUREMENT_ID && <GoogleAnalytics gaId={GA_MEASUREMENT_ID} />}
     </html>
   );
 }
